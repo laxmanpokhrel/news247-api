@@ -1,0 +1,16 @@
+२१ मंसिर २०७८, मंगलवार
+
+// const newsKiker =
+      //   articlesArray[0].childNodes[4].childNodes[0].textContent.trim();
+      // const heading =
+      //   articlesArray[0].childNodes[6].childNodes[0].textContent.trim();
+      // const headingNav =
+      //   articlesArray[0].childNodes[6].childNodes[0].getAttribute("href");
+      // const mediaNav =
+      //   articlesArray[0].childNodes[7].childNodes[0].childNodes[0].getAttribute(
+      //     "href"
+      //   );
+      // const mediaSrc =
+      //   articlesArray[0].childNodes[7].childNodes[0].childNodes[0].childNodes[0].getAttribute(
+      //     "src"
+      //   );
