@@ -1,7 +1,37 @@
-{
-    "news":[
-        {
-            
-        }
-    ]
-}
+[
+    {
+        "newsKiker": "कांग्रेस महाधिवेशन समीक्षा",
+        "heading": "बुढो रूखमा पालुवा",
+        "headingNavigation": "https://ekantipur.com/news/2021/12/16/163965858232676184.html",
+        "mediaNavigation": "https://ekantipur.com/news/2021/12/16/163965858232676184.html",
+        "mediaSource": "//assets-cdn.kantipurdaily.com/uploads/source/news/kantipur/2021/politics/there-brothers-16122021021856-1000x0.jpg"
+    },
+    {
+        "newsKiker": "प्रोफाइल",
+        "heading": "गुटको घेरा तोडेर उदाएका विश्वप्रकाश",
+        "headingNavigation": "https://ekantipur.com/news/2021/12/16/163965656084669089.html",
+        "mediaNavigation": "https://ekantipur.com/news/2021/12/16/163965656084669089.html",
+        "mediaSource": "//assets-cdn.kantipurdaily.com/uploads/source/news/kantipur/2021/politics/biswo-prakash-16122021014956-1000x0.jpg"
+    },
+    {
+        "newsKiker": "कांग्रेस महाधिवेशन",
+        "heading": "महामन्त्री जितेपछिको खुसीयाली [तस्बिरहरु]",
+        "headingNavigation": "https://ekantipur.com/photo_feature/2021/12/16/163965564498177135.html",
+        "mediaNavigation": "https://ekantipur.com/photo_feature/2021/12/16/163965564498177135.html",
+        "mediaSource": "//assets-cdn.kantipurdaily.com/uploads/source/news/kantipur/2021/politics/gagan-biswo-16122021124236-1000x0.jpg"
+    },
+    {
+        "newsKiker": "प्रोफाइल",
+        "heading": "गगन थापा- गणतान्त्रिक आन्दोलनका ‘आइकन’, दुई तिहाईका महामन्त्री",
+        "headingNavigation": "https://ekantipur.com/news/2021/12/16/163964996845046706.html",
+        "mediaNavigation": "https://ekantipur.com/news/2021/12/16/163964996845046706.html",
+        "mediaSource": "//assets-cdn.kantipurdaily.com/uploads/source/news/kantipur/2021/politics/gagan-thapa-16122021112714-1000x0.jpg"
+    },
+    {
+        "newsKiker": "कांग्रेस महाधिवेशन",
+        "heading": "कांग्रेस सहमहामन्त्रीको मतगणना सुरु",
+        "headingNavigation": "https://ekantipur.com/news/2021/12/16/163965683557057203.html",
+        "mediaNavigation": "https://ekantipur.com/news/2021/12/16/163965683557057203.html",
+        "mediaSource": "//assets-cdn.kantipurdaily.com/uploads/source/news/kantipur/2021/politics/vote-counting-11-14122021013019-1000x0.jpg"
+    }
+]
