@@ -3,7 +3,7 @@ const fs = require('fs');
 const JSONDFile = require('./data.json');
 const dataPrototype = require("./helpers/jsonformat");
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   //* to scrap front page headlines
