@@ -17,10 +17,10 @@ async function scrapHamroPatro() {
         return {
             source: 'hamropatro',
             data: {
-                nepDate: nepDate,
-                nepEvent: nepEvent,
-                scrappedNepalTime: scrappedNepalTime,
-                engDate: engDate,
+                nepDate: document.querySelector('.logo .date .nep') ? document.querySelector('.logo .date .nep').textContent : "missing",
+                nepEvent: "missing",
+                scrappedNepalTime: document.querySelector('.logo .time span') ? document.querySelector('.logo .time span').textContent : "missing",
+                engDate: document.querySelector('.logo .time .eng') ? document.querySelector('.logo .time .eng').textContent : "missing",
             },
         }
     })

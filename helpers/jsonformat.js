@@ -15,7 +15,7 @@ let data = {
                 "items": []
             }
         },
-        "setopati": {
+        "onlineKhabar": {
             "frontPageHeadlines": {
                 "latestCount": 0,
                 "items": []
