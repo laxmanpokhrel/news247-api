@@ -1,3 +1,7 @@
 const express = require("express");
-const scrappingController = require("../controller/ekantipurController")
+const ekantipurController = require("../controller/ekantipurController")
 const router = express.router();
+
+router.get("/today", ekantipurController.getToday);
+router.get("/today/latest", ekantipurController.getTodayLatest);
+router.get("/today/latest/:number", ekantipurController.getTodayLatestNumber);
