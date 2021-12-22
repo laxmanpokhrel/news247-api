@@ -1,0 +1,1 @@
+exports.getDate = (req, res, next) => { }
