@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-(async () => {
+module.exports = (async () => {
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     await page.goto("https://www.onlinekhabar.com/");
@@ -195,5 +195,5 @@ const puppeteer = require('puppeteer');
     });
     console.log("the headlines are : ", frontPageHeadlines);
     await browser.close();
-})();
+});
 

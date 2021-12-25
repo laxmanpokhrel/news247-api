@@ -7,7 +7,7 @@ const app = express();
 // app.use(scarppingRoutes);
 app.get("/", (req, res, next) => {
     res.json({ "title": "hey there!!" });
-})
+});
 
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {

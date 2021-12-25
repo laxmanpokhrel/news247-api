@@ -1,8 +1,6 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
-const JSONDFile = require('./data.json');
-const dataPrototype = require("./helpers/jsonformat");
-(async () => {
+const save = require("../utils/save");
+module.exports = (async () => {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -13,12 +11,6 @@ const dataPrototype = require("./helpers/jsonformat");
     articlesArray = [...articles];
     const data = [];
     for (let i = 0; i < articlesArray.length; i++) {
-      console.log("here: " + articlesArray.length);
-      const newsKiker = articlesArray[i].childNodes[4].childNodes[0] ? articlesArray[i].childNodes[4].childNodes[0].textContent : "missing";
-      const heading = articlesArray[i].childNodes[6].childNodes[0] ? articlesArray[i].childNodes[6].childNodes[0].textContent.trim() : "missing";
-      const headingNav = articlesArray[i].childNodes[6].childNodes[0] ? articlesArray[i].childNodes[6].childNodes[0].getAttribute('href') : "missing";
-      const mediaNav = articlesArray[i].childNodes[7].childNodes[0].childNodes[0] ? articlesArray[i].childNodes[7].childNodes[0].childNodes[0].getAttribute("href") : "missing";
-      const mediaSrc = articlesArray[i].childNodes[7].childNodes[0].childNodes[0].childNodes[0] ? articlesArray[i].childNodes[7].childNodes[0].childNodes[0].childNodes[0].getAttribute('src') : "missing";
       data.push({
         "newsKiker": newsKiker,
         "heading": heading,
@@ -27,9 +19,10 @@ const dataPrototype = require("./helpers/jsonformat");
         "mediaSource": mediaSrc,
       });
     }
-    return data;
+    return JSON.stringify(data);
   }).then(() => {
     console.log(" front page headlines fetched!!");
+
   }).catch(err => {
     console.log("Error While Inserting frontPAgeHeadlines\n:" + err);
   });
@@ -39,13 +32,13 @@ const dataPrototype = require("./helpers/jsonformat");
   //* to scrap sports news
   await page.goto("https://ekantipur.com/sports");
   const sportsHeadlines = await page.evaluate(() => {
-    const sportsData = [];
+    const data = [];
     const catagory = document.querySelector(".listLayout .row > .cat_name > .catName").textContent;
     const sportsArticles = document.querySelectorAll(".listLayout .row > div:nth-child(2) article");
     //* we get objects from above selector. To loop through each object we have to destructure as to an array... 
     temp = [...sportsArticles];
     temp.forEach(x => {
-      sportsData.push({
+      data.push({
         "headline": x.childNodes[0].childNodes[0].childNodes[0] ? x.childNodes[0].childNodes[0].childNodes[0].textContent : "missing",
         "headlineNavigation": x.childNodes[0].childNodes[0].childNodes[0] ? x.childNodes[0].childNodes[0].childNodes[0].getAttribute("href") : "missing",
         "author": x.childNodes[0].childNodes[1].childNodes[0] ? x.childNodes[0].childNodes[1].childNodes[0].textContent : "missing",
@@ -55,7 +48,7 @@ const dataPrototype = require("./helpers/jsonformat");
         "mediaNavigation": x.childNodes[1].childNodes[0].childNodes[0] ? x.childNodes[1].childNodes[0].childNodes[0].getAttribute("href") : "missing"
       });
     })
-    return sportsData;
+    return JSON.stringify(data);
   }).then(() => {
     console.log(" sports headlines fetched!!");
   }).catch(err => {
@@ -80,9 +73,7 @@ const dataPrototype = require("./helpers/jsonformat");
         "mediaNavigation": x.childNodes[1].childNodes[0].childNodes[0] ? x.childNodes[1].childNodes[0].childNodes[0].getAttribute("href") : "missing"
       });
     })
-    console.log(data);
-
-    return data;
+    return JSON.stringify(data);
   }).then(() => {
     console.log("tech news fetched!!");
 
@@ -90,4 +81,6 @@ const dataPrototype = require("./helpers/jsonformat");
     console.log("error while fetching tech news : \n" + error);
   });
   await browser.close();
-})();
+  save.saveEkantipurNews(frontPageHeadlines, technologyNews, sportsHeadlines);
+
+});
