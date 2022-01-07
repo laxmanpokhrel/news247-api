@@ -20,7 +20,9 @@ exports.getDate = async (req, res, next) => {
     }
     await hamroPatroDates.find().sort({ _id: -1 }).limit(1).then((result) => {
         res.status(200).json({
-            "date": result
+            "nepDate": result[0].nepDate,
+            "nepEvent": result[0].nepEvent,
+            "engDate": result[0].engDate
         })
     }).catch(err => {
         console.log("error while fetching dates: ", err)
