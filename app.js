@@ -1,20 +1,22 @@
 const express = require("express");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 require('dotenv').config()
-// const scarppingRoutes = require("./routes/scrappingRoutes");
+const samacharRoutes = require("./routes/samacharRoutes");
+const ekantipurRoutes = require("./routes/ekantipurRoutes");
+const hamroPatroRoutes = require("./routes/hamroPatroRoutes");
+const onlineKhabarRoutes = require("./routes/onlineKhabarRoutes");
 const app = express();
 
-// app.use(scarppingRoutes);
+app.use("/hamropatro", hamroPatroRoutes);
+app.use("/ekantipur", ekantipurRoutes);
+app.use("/onlinekhabar", onlineKhabarRoutes);
+app.use("/samachar", samacharRoutes);
 app.get("/", (req, res, next) => {
-    res.json({ "title": "hey there!!" });
-});
+    res.json({
+        "title": "This is news API"
+    });
+})
 
-
-mongoose.connect(process.env.MONGODB_URI).then(() => {
-    console.log("connected to database...");
-    app.listen(3000, () => {
-        console.log("listening to port 3000");
-    })
-}).catch((err) => {
-    console.log("Error while connecting to DB. ", err);
+app.listen(process.env.PORT, () => {
+    console.log("listening to port: ", process.env.PORT);
 })
